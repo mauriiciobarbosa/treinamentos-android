@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.view.animation.BounceInterpolator;
 
 import br.com.concrete.androidanimationspart1.R;
 import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
@@ -17,6 +17,8 @@ import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
 public class ViewScaleFragment extends Fragment implements AnimationFragment {
 
     View view;
+    boolean plus;
+
 
     public static ViewScaleFragment newInstance() {
         return new ViewScaleFragment();
@@ -37,6 +39,15 @@ public class ViewScaleFragment extends Fragment implements AnimationFragment {
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        view.animate()
+                .scaleX(getNewValue())
+                .setInterpolator(new BounceInterpolator())
+                .setDuration(1000)
+                .start();
+    }
+
+    private float getNewValue() {
+        plus = !plus;
+        return view.getScaleX() + (plus ? 1 : -1);
     }
 }

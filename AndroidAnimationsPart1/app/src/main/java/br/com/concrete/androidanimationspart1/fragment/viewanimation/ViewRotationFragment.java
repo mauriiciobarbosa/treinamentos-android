@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import br.com.concrete.androidanimationspart1.R;
 import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
@@ -37,6 +36,6 @@ public class ViewRotationFragment extends Fragment implements AnimationFragment 
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        view.animate().rotationBy(45f).start();
     }
 }

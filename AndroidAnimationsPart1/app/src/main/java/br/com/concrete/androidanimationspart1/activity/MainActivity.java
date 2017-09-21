@@ -25,6 +25,7 @@ import br.com.concrete.androidanimationspart1.fragment.property.SetFragment;
 import br.com.concrete.androidanimationspart1.fragment.property.ValueColorFragment;
 import br.com.concrete.androidanimationspart1.fragment.property.ValueTextFragment;
 import br.com.concrete.androidanimationspart1.fragment.viewanimation.ViewAlphaFragment;
+import br.com.concrete.androidanimationspart1.fragment.viewanimation.ViewPlaygroundFragment;
 import br.com.concrete.androidanimationspart1.fragment.viewanimation.ViewRotationFragment;
 import br.com.concrete.androidanimationspart1.fragment.viewanimation.ViewScaleFragment;
 import br.com.concrete.androidanimationspart1.fragment.viewanimation.ViewTranslationFragment;
@@ -97,6 +98,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.view_translation) {
             setFragment(ViewTranslationFragment.newInstance());
             setTitle("Translation ViewAnimation");
+        } else if (id == R.id.view_free) {
+            setFragment(ViewPlaygroundFragment.newInstance());
+            setTitle("Playgorund ViewAnimation");
         } else if (id == R.id.property_object_corner) {
             setFragment(ObjectCornerFragment.newInstance());
             setTitle("ObjectAnimator Corner");

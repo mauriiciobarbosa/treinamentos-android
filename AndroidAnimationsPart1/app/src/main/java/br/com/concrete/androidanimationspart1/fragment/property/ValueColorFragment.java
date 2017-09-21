@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.graphics.drawable.ArgbEvaluator;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +37,7 @@ public class ValueColorFragment extends Fragment implements AnimationFragment {
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_base, container, false);
         view = layout.findViewById(R.id.view);
+        view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
         return layout;
     }
 

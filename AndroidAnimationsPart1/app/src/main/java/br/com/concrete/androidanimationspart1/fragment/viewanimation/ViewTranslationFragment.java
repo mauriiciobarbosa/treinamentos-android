@@ -3,10 +3,10 @@ package br.com.concrete.androidanimationspart1.fragment.viewanimation;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import br.com.concrete.androidanimationspart1.R;
 import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
@@ -17,6 +17,7 @@ import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
 public class ViewTranslationFragment extends Fragment implements AnimationFragment {
 
     View view;
+    boolean plus;
 
     public static ViewTranslationFragment newInstance() {
         return new ViewTranslationFragment();
@@ -37,6 +38,15 @@ public class ViewTranslationFragment extends Fragment implements AnimationFragme
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        view.animate()
+                .translationY(getNewValue())
+                .setInterpolator(new FastOutSlowInInterpolator())
+                .setDuration(1000)
+                .start();
+    }
+
+    private float getNewValue() {
+        plus = !plus;
+        return plus ? 45 : -45;
     }
 }

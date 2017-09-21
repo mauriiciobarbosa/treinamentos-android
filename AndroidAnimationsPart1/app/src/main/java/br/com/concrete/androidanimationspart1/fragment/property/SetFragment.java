@@ -1,12 +1,13 @@
 package br.com.concrete.androidanimationspart1.fragment.property;
 
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import br.com.concrete.androidanimationspart1.R;
 import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
@@ -37,6 +38,8 @@ public class SetFragment extends Fragment implements AnimationFragment {
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), R.animator.property_animation);
+        animatorSet.setTarget(view);
+        animatorSet.start();
     }
 }
