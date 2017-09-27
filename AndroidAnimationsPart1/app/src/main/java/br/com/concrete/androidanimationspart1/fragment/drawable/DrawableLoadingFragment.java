@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import br.com.concrete.androidanimationspart1.R;
 import br.com.concrete.androidanimationspart1.fragment.AnimationFragment;
@@ -34,11 +33,17 @@ public class DrawableLoadingFragment extends Fragment implements AnimationFragme
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_base, container, false);
         view = layout.findViewById(R.id.view);
+        view.setBackgroundResource(R.drawable.loading_animation);
+        animation = (AnimationDrawable) view.getBackground();
         return layout;
     }
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        if (animation.isRunning()) {
+            animation.stop();
+        } else {
+            animation.start();
+        }
     }
 }

@@ -6,18 +6,18 @@
 
     <item
         android:drawable="@drawable/ic_heart_0"
-        android:duration="40" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/ic_heart_1"
-        android:duration="40" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/ic_heart_2"
-        android:duration="40" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/ic_heart_3"
-        android:duration="40" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/ic_heart_4"
-        android:duration="40" />
+        android:duration="100" />
 
 </animation-list>

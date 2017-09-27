@@ -32,11 +32,17 @@ public class ObjectCornerFragment extends Fragment implements AnimationFragment 
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_base, container, false);
         view = layout.findViewById(R.id.view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+            }
+        });
         return layout;
     }
 
     @Override
     public void runAnimation() {
-        Toast.makeText(getContext(), "run", Toast.LENGTH_SHORT).show();
+        view.animate().translationXBy(45f).start();
     }
 }
